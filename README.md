@@ -59,3 +59,26 @@ Below is an example of the output for the 14-residue antimicrobial peptide Smp14
 ![v3](https://user-images.githubusercontent.com/127429845/224114917-bd2ec12e-78a7-4f62-8d28-ad74ed80cc9e.png)
 
 Blue resiudes are cationic, green residues are polar and grey resiudes are hydrophobic.
+
+
+
+**Version 1.1:**
+
+New in version 1.1 is the ability to generate the wheel projections based on data from three repeat simulations. This is done using the –m triplicate flag. Each trajectory must be analysed individually first, to generate the individual results files containing the angles. Thereafter the results can be combined using the –m triplicate flag and the–r, -r2, -r3 flags to specify each of the results files (also need the sequence.dat file). A new wheel projection is generated based on the following: 
+
+    Bar hight = Average maximum sidechain protrusion from the alpha-carbon 
+
+    Bar orientation = Centre point between max and min angle from the three simulations 
+
+    Bar spread = Difference between max and min angle + 1x the average standard deviation of the three angle distributions  
+
+An example of the command line input could look like this: 
+
+>python3 gmx_wheel+_v1.1.py -m triplicate  -ps 1 –pe 14 –r results1.txt -r2 results2.txt -r3 results3.txt 
+
+Example output:
+
+
+![combined](https://user-images.githubusercontent.com/127429845/226190107-a0b4c544-ef99-4be2-8af1-4187bd422f84.png)
+
+Left = Projections for each of the three repeat simulations. Right = Combined projection using the triplicate mode. 
