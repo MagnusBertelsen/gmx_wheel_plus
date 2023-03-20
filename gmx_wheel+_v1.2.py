@@ -31,7 +31,7 @@ parser.add_argument("-r2", "--results_input2", default='results2.txt', help="Inp
 parser.add_argument("-r3", "--results_input3", default='results3.txt', help="Input file 3 for wheel projection (only relevant if -m triplicate)")
 parser.add_argument("-ps", "--projection_start", default="all", help="First resiude shown in the wheel projection")
 parser.add_argument("-pe", "--projection_end", default="all", help="Last resiude shown in the wheel projection")
-parser.add_argument("-cutoff", "--cutoff", default=5, type=int, help="Cutoff value in % used to determine when changes in the sidechain length are highlighted in difference mode")
+parser.add_argument("-cutoff", "--cutoff", default=5, type=int, help="Cutoff value in percentage used to determine when changes in the sidechain length are highlighted in difference mode")
 
 
 args = vars(parser.parse_args())
