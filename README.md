@@ -82,3 +82,39 @@ Example output:
 ![combined](https://user-images.githubusercontent.com/127429845/226190107-a0b4c544-ef99-4be2-8af1-4187bd422f84.png)
 
 Left = Projections for each of the three repeat simulations. Right = Combined projection using the triplicate mode. 
+
+
+**Version 1.2:**
+
+New in version 1.2 is the ability to investigate shifts in the sidechain orientations between two data sets. This can both be between two identical peptide or a parent peptide and an analog, using either single or triplicate trajectory data sets. The two data sets are compared and the differences in the sidechain protrusion lengths and orientations are calculated. This is done using the –m difference flag, with the –r and –r2 flags used to specify the data sets. A new wheel projection is generated based on the following: 
+
+    Bar hight = Average maximum sidechain protrusion from the alpha-carbon of data set 2 (-r2) 
+
+    Bar pattern = Indication of if the protrusion length has changed compared to the original data set (-r). Dots = greater than 5% increase. Crosses = greater than 5% decrease. The cutoff (default = 5%) can be changed using the –cutoff flag. 
+
+    Bar orientation = Centre point between the angles from the two data sets. 
+
+    Bar spread = Difference between the angles from the two data sets (each edge of the bar corresponds to the centre point of each angle distribution).  
+
+    Bar colour = Indication of the directions of the angle shift. Red = clockwise shift, Blue = counterclockwise shift. 
+
+    Bar labelling = Scripts checks the residues from the data sets/results files. If a residue is changed the label will be updated to include both residues (<position number><original residue>/<new residue>).  
+
+ 
+
+An example of the command line input could look like this: 
+
+>python3 gmx_wheel+_v1.2.py -m difference -r results1.txt -r2 results2.txt -ps 1 -pe 14 
+
+ 
+
+Example output: 
+
+
+![combined](https://user-images.githubusercontent.com/127429845/226317241-06653b1f-b9e5-483e-a9a5-0a52c4a63f7d.png)
+
+
+Left = projection of data set 1, right = projection of data set 2, centre = projection of difference. On average the helix has shifted 10.13 degrees clockwise in 
+data set 2 relative to data set 1.
+The results for the position 4 residue were manually edited to show how the protrusion length decrease and labeling of modified residues would look.
+
