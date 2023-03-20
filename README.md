@@ -118,3 +118,7 @@ Left = projection of data set 1, right = projection of data set 2, centre = proj
 data set 2 relative to data set 1.
 The results for the position 4 residue were manually edited to show how the protrusion length decrease and labeling of modified residues would look.
 
+
+Known issues
+Does not work if peptide includes glycine residues (due to no sidechain).
+
