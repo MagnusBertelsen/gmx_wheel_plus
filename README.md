@@ -120,7 +120,3 @@ The results for the position 4 residue were manually edited to show how the prot
 
 
 
-**Known issues:**
-
-Does not work if peptide includes glycine residues (due to no sidechain).
-
